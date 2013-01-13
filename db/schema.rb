@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106233823) do
+ActiveRecord::Schema.define(:version => 20130113231341) do
 
   create_table "routines", :force => true do |t|
     t.string   "email"
@@ -29,9 +29,11 @@ ActiveRecord::Schema.define(:version => 20130106233823) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.string   "bio"
+    t.string   "routine"
   end
 
   add_index "users", ["bio"], :name => "index_users_on_bio"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+  add_index "users", ["routine"], :name => "index_users_on_routine"
 
 end
