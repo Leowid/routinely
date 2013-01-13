@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'gravatar_image_tag'
 
 
 # Bundle edge Rails instead:

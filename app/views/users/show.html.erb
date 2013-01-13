@@ -1,3 +1,14 @@
-<div class="profile">
-	<%= @user.name %>, <%= @user.email %>
+<% provide(:title, @user.name) %>
+<div class="row profile">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <p>
+      	<%= @user.bio %>
+      </p>
+    </section>
+  </aside>
 </div>
