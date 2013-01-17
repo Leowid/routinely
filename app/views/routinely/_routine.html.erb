@@ -1,2 +1,4 @@
-<h2>My daily routine</h2>
-<p><%= @user.routine %></p>
+<div class="routine">
+	<h2>My daily routine</h2>
+		<p><%= h(@user.routine).gsub(/\n/, '<br/>').html_safe %></p>
+</div>
