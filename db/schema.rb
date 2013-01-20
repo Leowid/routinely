@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117144134) do
+ActiveRecord::Schema.define(:version => 20130120181920) do
 
   create_table "routines", :force => true do |t|
     t.string   "email"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20130117144134) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.string   "bio"
-    t.string   "routine"
+    t.text     "routine"
     t.string   "twitter"
   end
 
