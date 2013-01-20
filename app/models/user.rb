@@ -12,8 +12,9 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
-  validates :bio, presence: true
-  validates :twitter, presence: true
+  validates :bio, presence: false
+  validates :twitter, presence: false
+  validates :routine, length: { maximum: 5000 }
 
   private
 
