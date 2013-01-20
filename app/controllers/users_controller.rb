@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:edit, :update]
-  before_filter :correct_user,   only: [:edit, :update]
+  before_filter :signed_in_user, only: [:edit, :update, :my_routine]
+  before_filter :correct_user,   only: [:edit, :update, :my_routine]
 
 	def show
 		@user = User.find(params[:id])
@@ -22,6 +22,10 @@ class UsersController < ApplicationController
 	end
 
 	def edit
+	end
+
+	def my_routine
+		@user = User.find(params[:id])
 	end
 
 	def update

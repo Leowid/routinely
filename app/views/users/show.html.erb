@@ -1,22 +1,25 @@
 <% provide(:title, @user.name) %>
-<div class="row profile">
-  <aside class="span4">
-    <section>
-      <h1>
+<div class="wrapper">
+  <div class="row profile">
+    <aside class="span6 offset3">
+      <section>
         <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-      <p>
-      	<%= @user.bio %>
-      </p>
-      <p>
-        <a href="https://twitter.com/<%= @user.twitter %>" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @<%= @user.twitter %></a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </p>
-      <div class="span6 offset3">
-      <%= render 'routinely/routine' %>
+        <h1>
+          <%= @user.name %>
+        </h1>
+        <p>
+        	<%= @user.bio %>
+        </p>
+        <p>
+          <a href="https://twitter.com/<%= @user.twitter %>" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @<%= @user.twitter %></a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </p>
       </div>
-    </section>
-  </aside>
-</div>
+  </div>
+        <div class="span6 offset3">
+        <%= render 'routinely/routine' %>
+        </div>
+      </section>
+    </aside>
+  </div>
 
