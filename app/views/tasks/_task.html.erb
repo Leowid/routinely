@@ -1,0 +1,6 @@
+<li>
+	<span class="content"><%= task.hour %>:<%= task.minute %> <%= task.content %> 
+		<% if @current_user %>
+			(<a href="/tasks/<%= task.id %>/edit">edit</a>)</span>
+		<% end %>
+</li>

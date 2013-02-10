@@ -160,6 +160,46 @@ input {
   box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
 }
 
+/* tasks */
+
+.tasks {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: $grayLight;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+.row {
+  margin-top: 60px;
+}
+
+.tasks {
+  text-align: center;
+}
+
+.field {
+  margin-top: 60px;
+}
+
 // Place all the styles related to the Routinely controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

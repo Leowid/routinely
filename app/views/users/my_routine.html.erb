@@ -1,0 +1,21 @@
+<% provide(:title, "Edit my_routine") %>
+<h1>What's your daily routine?</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages' %>
+
+			<%= f.label :bio %>
+			<%= f.text_field :bio %>
+
+			<%= f.label :twitter, "Twitter username: @" %> 
+			<%= f.text_field :twitter %>
+
+			<%= f.label :routine %>
+			<%= f.text_area :routine %>
+
+			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

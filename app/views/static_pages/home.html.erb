@@ -1,9 +1,31 @@
-<div class="center hero-unit">
-  <h1>Welcome to Routinely</h1>
+<% if signed_in? %>
+	<div class="row">
+		<aside class="span8">
+			<section>
+				<%= render 'shared/user_info' %>
+			</section>
+			<section>
+				<%= render 'shared/task_form' %>
+			</section>
+		</aside>
+	</div>
+	 <div class="tasks">
+      <% if @user.tasks.any? %>
+        <h3> My daily routine </h3>
+        <ol class="tasks">
+          <%= render @tasks %>
+        </ol>
+        <%= will_paginate @tasks %>
+      <% end %>
+  </div>
+<% else %>
+	<div class="center hero-unit">
+  		<h1>Welcome to Routinely</h1>
 
-  <h2>
-    An easy way to create your daily routine and stick with it.
-  </h2>
+  		<h2>
+  		  An easy way to create your daily routine and stick with it.
+  		</h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+  		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+		</div>
+<% end %>

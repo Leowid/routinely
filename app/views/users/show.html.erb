@@ -16,10 +16,15 @@
         </p>
       </div>
   </div>
-        <div class="span6 offset3">
-        <%= render 'routinely/routine' %>
-        </div>
       </section>
     </aside>
+    <div class="tasks">
+      <% if @user.tasks.any? %>
+        <h3> My daily routine </h3>
+        <ol class="tasks">
+          <%= render @tasks %>
+        </ol>
+        <%= will_paginate @tasks %>
+      <% end %>
   </div>
 
