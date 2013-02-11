@@ -10,7 +10,10 @@ class TasksController < ApplicationController
 	end
 
 	def create
+		params[:task].except('to_hour(1i)', 'to_hour(2i)', 'to_hour(3i)', 'to_hour(4i)', 'to_hour(5i)') if params[:task]['to_hour(4i)'].blank?
 		@task = current_user.tasks.build(params[:task])
+		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
+		#raise @task.inspect
 		if @task.save
 			flash[:success] = "This task was added to your routine!"
 			redirect_to root_url
@@ -28,8 +31,10 @@ class TasksController < ApplicationController
 	end
 
 	def update
+		params[:task].except('to_hour(1i)', 'to_hour(2i)', 'to_hour(3i)', 'to_hour(4i)', 'to_hour(5i)') if params[:task]['to_hour(4i)'].blank?
 		@user = current_user
 		@task = Task.find(params[:id])
+		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
 		if @task.update_attributes(params[:task])
 			flash[:success] = "Task saved!"
 			redirect_to @user 

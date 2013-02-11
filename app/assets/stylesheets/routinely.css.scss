@@ -1,7 +1,6 @@
 @import "bootstrap";
 
 .profile {
-	margin-top: 60px;
 }
 
 .center {
@@ -10,14 +9,12 @@
 
 .center h1 {
   margin-bottom: 10px;
-  margin-top: 50px;
 }
 
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  margin-top:60px;
   text-align: center;
 }
 
@@ -140,7 +137,6 @@ input {
  }
 
  .alert {
-  margin-top: 50px;
  }
 
  /* miscalleneous */
@@ -150,7 +146,6 @@ input {
 }
 
 .routine {
-  margin-top: 40px;
 }
 
 .wrapper {
@@ -189,15 +184,24 @@ aside {
 }
 
 .row {
-  margin-top: 60px;
 }
 
 .tasks {
   text-align: center;
 }
 
-.field {
-  margin-top: 60px;
+.field select {
+  margin-top: 10px;
+  width: 50px;
+  list-style: none; 
+}
+
+.textfield {
+  width: 200px;
+}
+
+body > div.container {
+  margin-top: 50px;
 }
 
 // Place all the styles related to the Routinely controller here.

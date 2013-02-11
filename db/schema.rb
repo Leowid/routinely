@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210185528) do
+ActiveRecord::Schema.define(:version => 20130210225905) do
 
   create_table "routines", :force => true do |t|
     t.string   "email"
@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(:version => 20130210185528) do
   create_table "tasks", :force => true do |t|
     t.string   "content"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "hour"
-    t.string   "minute"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.time     "hour",       :limit => 255
+    t.time     "to_hour",    :limit => 255
   end
 
   add_index "tasks", ["hour"], :name => "index_tasks_on_hour"
-  add_index "tasks", ["minute"], :name => "index_tasks_on_minute"
+  add_index "tasks", ["to_hour"], :name => "index_tasks_on_to_hour"
   add_index "tasks", ["user_id", "created_at"], :name => "index_tasks_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|

@@ -1,11 +1,10 @@
 <%= form_for(@task) do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 	<div class="field">
-		<%= f.text_field :content, placeholder: "Add new item..." %>
-		<%= f.label :hour %>
-		<%= f.select :hour, (0...24) %>
-		<%= f.label :minute %>
-		<%= f.select :minute, (0...60) %>
+		<%= f.time_select("hour") %> - <%= f.time_select("to_hour", include_blank: true) %>
 	</div>
-	<%= f.submit "Add", class: "btn btn-large btn-primary" %>
+	<div class="textfield">		
+		<%= f.text_field :content, placeholder: "Add new item..." %>
+	</div>
+	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
 <% end %>
