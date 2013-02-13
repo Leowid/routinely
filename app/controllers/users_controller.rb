@@ -30,15 +30,12 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		params[:task].except('to_hour(1i)', 'to_hour(2i)', 'to_hour(3i)', 'to_hour(4i)', 'to_hour(5i)') if params[:task]['to_hour(4i)'].blank?
-		@task = current_user.tasks.build(params[:task])
-		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
-		#raise @task.inspect
-		if @task.save
-			flash[:success] = "This task was added to your routine!"
-			redirect_to root_url
+		if @user.update_attributes(params[:user])
+			flash[:success] = "Profile updated"
+			sign_in @user
+			redirect_to @user
 		else
-			render 'static_pages/home'
+			render 'edit'
 		end
 	end
 
