@@ -6,7 +6,8 @@ class TasksController < ApplicationController
 
 	def show
 		@user = current_user
-		@tasks = @user.tasks.paginate(page: params[:page])
+		@tasks = @user.tasks.paginate(page: params[:page], order: 'hour')
+
 	end
 
 	def create
@@ -20,9 +21,6 @@ class TasksController < ApplicationController
 		else
 			render 'static_pages/home'
 		end
-	end
-
-	def destroy
 	end
 
 	def edit
@@ -42,4 +40,18 @@ class TasksController < ApplicationController
 			render 'edit'
 		end
 	end
+
+	def destroy
+		@task = Task.find(params[:id])
+		@task.destroy
+		flash[:success] = "It's gone, one less thing to worry about! :)"
+		redirect_to current_user
+	end
+
+	private
+
+    def correct_user
+      @task = current_user.task.find_by_id(params[:id])
+      redirect_to root_url if @task.nil?
+    end
 end

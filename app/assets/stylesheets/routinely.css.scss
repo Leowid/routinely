@@ -108,6 +108,7 @@ aside {
 }
 
 .gravatar {
+
 }
 
 /* forms */
@@ -173,8 +174,7 @@ input {
   color: $grayLight;
 }
 .gravatar {
-  float: left;
-  margin-right: 10px;
+  margin-top: 10px;
 }
 aside {
   textarea {
@@ -187,7 +187,14 @@ aside {
 }
 
 .tasks {
-  text-align: center;
+  text-align: left;
+  width: 430px;
+  margin:0 auto;
+  margin-top: 15px;
+}
+
+.taskdesign {
+  margin-top: 15px;
 }
 
 .field select {
@@ -203,6 +210,41 @@ aside {
 body > div.container {
   margin-top: 50px;
 }
+
+.navbar-inverse .navbar-inner {
+  background-image: -webkit-linear-gradient(top, #bdecb6, rgb(90, 206, 90));
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a{
+  color: #FFFFFF
+}
+
+.btn-primary {
+  background-image: -webkit-linear-gradient(top, #bdecb6, rgb(90, 206, 90));
+  border-color: #bdecb6;
+}
+
+.btn-primary:hover {
+  background-color: #bdecb6;
+}
+
+a {
+  color: rgb(90, 206, 90);
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+  background-image: -webkit-linear-gradient(top, #bdecb6, rgb(90, 206, 90));
+}
+
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: rgb(90, 206, 90);
+}
+
+.pictures {
+  height: 15px;
+  width: 15px;
+}
+
 
 // Place all the styles related to the Routinely controller here.
 // They will automatically be included in application.css.

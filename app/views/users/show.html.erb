@@ -21,9 +21,9 @@
     <div class="tasks">
       <% if @user.tasks.any? %>
         <h3> My daily routine </h3>
-        <ol class="tasks">
+        <ol class="tasks"><div class="task-design">
           <%= render @tasks %>
-        </ol>
+        </div></ol>
         <%= will_paginate @tasks %>
       <% end %>
   </div>
