@@ -35,7 +35,7 @@ class TasksController < ApplicationController
 		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
 		if @task.update_attributes(params[:task])
 			flash[:success] = "Task saved!"
-			redirect_to @user 
+			redirect_to @user
 		else
 			render 'edit'
 		end
