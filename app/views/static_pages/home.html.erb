@@ -1,23 +1,23 @@
 <% if signed_in? %>
-	<div class="row">
-		<aside class="span8">
-			<section>
+<div class="wrapper">
+  <div class="row profile">
+    <aside class="span4 offset0">
+      <section>
 				<%= render 'shared/user_info' %>
 			</section>
 			<section>
 				<%= render 'shared/task_form' %>
-			</section>
-		</aside>
-	</div>
+      </section>
+    </aside>
+  </div>
 	 <div class="tasks">
       <% if @user.tasks.any? %>
         <h3> My daily routine </h3>
-        <ol class="tasks">
           <%= render @tasks %>
-        </ol>
         <%= will_paginate @tasks %>
       <% end %>
   </div>
+</div>
 <% else %>
 	<div class="center hero-unit">
   		<h1>Welcome to Routinely</h1>

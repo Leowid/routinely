@@ -44,7 +44,7 @@ class TasksController < ApplicationController
 	def destroy
 		@task = Task.find(params[:id])
 		@task.destroy
-		flash[:success] = "It's gone, one less thing to worry about! :)"
+		flash[:success] = "One less thing to worry about! :)"
 		redirect_to current_user
 	end
 

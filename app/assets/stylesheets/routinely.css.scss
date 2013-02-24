@@ -15,7 +15,6 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 h2 {
@@ -86,7 +85,6 @@ footer ul li {
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid $grayLighter;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -98,7 +96,7 @@ aside {
     }
     h1 {
       font-size: 1.4em;
-      text-align: center;
+      text-align: margin-left;
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
@@ -143,7 +141,7 @@ input {
  /* miscalleneous */
 
 .profile {
-  text-align: center;
+  float: left;
 }
 
 .routine {
@@ -153,28 +151,18 @@ input {
   background-image: url ('http://farm7.staticflickr.com/6151/6159637428_6bffb5bce1_z.jpg');
   height: 300px;
   padding: 0px;
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,.1);
+  margin-top: 25px;
 }
 
 /* tasks */
 
-.tasks {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-}
 .content {
-  display: block;
+  margin-left: 20
 }
 .timestamp {
   color: $grayLight;
 }
 .gravatar {
-  margin-top: 10px;
 }
 aside {
   textarea {
@@ -190,7 +178,10 @@ aside {
   text-align: left;
   width: 430px;
   margin:0 auto;
-  margin-top: 15px;
+  border-left: 1px solid #eaeaea;
+  padding-left: 75px;
+  margin-left: 75px;
+  float: left;  
 }
 
 .taskdesign {
@@ -212,7 +203,7 @@ body > div.container {
 }
 
 .navbar-inverse .navbar-inner {
-  background-image: -webkit-linear-gradient(top, #bdecb6, rgb(90, 206, 90));
+  background-image: -webkit-linear-gradient(top, rgb(148, 233, 136), rgb(90, 206, 90));
 }
 
 .navbar-inverse .brand, .navbar-inverse .nav > li > a{
@@ -243,6 +234,11 @@ a {
 .pictures {
   height: 15px;
   width: 15px;
+}
+
+h3 {
+  line-height: 0px;
+  padding-bottom: 25px;
 }
 
 

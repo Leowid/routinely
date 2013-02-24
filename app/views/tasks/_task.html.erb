@@ -1,6 +1,6 @@
 <div class="taskdesign">
-	<span class="content"><%= image_tag '/assets/clock.png', :class=>'pictures' %>  <%= Time.at(task.hour).strftime("%I:%M %p") %> 
-		<%= Time.at(task.to_hour).strftime("- %I:%M %p") unless task.to_hour.nil? %> <strong><%= task.content %> </strong>
+	<span class="time"><%= image_tag '/assets/clock.png', :class=>'pictures' %>  <%= Time.at(task.hour).strftime("%I:%M %p") %> 
+		<%= Time.at(task.to_hour).strftime("- %I:%M %p") unless task.to_hour.nil? %> </span><span class="content"><strong><%= task.content %> </strong></span>
 		<% if @current_user %>
 			(<a href="/tasks/<%= task.id %>/edit">edit</a>) (<%= link_to "delete", task, method: :delete,
 				data: { confirm: "Are you sure?" },
