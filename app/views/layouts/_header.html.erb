@@ -1,17 +1,18 @@
+<% if signed_in? %>
 <header class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
-				<%= link_to "routinely", current_user, id: "logo"%>
+				<%= link_to "zenflow", "/home", id: "logo"%>
 				<nav>
 					<ul class="nav pull-right">
-			          <li><%= link_to "Home", current_user %></li>
+			          <li><%= link_to "Home", "/home" %></li>
 			          <% if signed_in? %>
 			            <li id="fat-menu" class="dropdown">
 			              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			                Account <b class="caret"></b>
 			              </a>
 			              <ul class="dropdown-menu">
-			                <li><%= link_to "Profile", "/home" %></li>
+			                <li><%= link_to "Profile", current_user %></li>
 			                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
 			                <li class="divider"></li>
 			                <li>
@@ -27,3 +28,4 @@
 			</div>
 		</div>
 	</header>
+<% end %>

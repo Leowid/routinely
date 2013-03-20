@@ -245,6 +245,59 @@ h3 {
   border-top-color: white;
 }
 
+body.homepage {
+  background-image: url("zenflow.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.landing {
+  width: 1000px;
+  height: 400px;
+  margin:0px auto;
+}
+
+.opening {
+  margin-left: 300px;
+  margin-top: 50px;
+  color: white;
+}
+
+.opening h2 {
+  color: white;
+  text-align: right;
+  padding-right: 30px;
+  overflow: hidden;
+  font-size: 23px;
+  letter-spacing:2px
+}
+
+.opening h1 {
+  color: white;
+  text-align: right;
+  padding-right: 30px;
+  margin-top: 400px;
+  letter-spacing: 1px;
+  font-style: normal; 
+  margin-bottom: 0px;
+}
+
+
+.signing {
+}
+
+.signing h2 {
+  text-align: left;
+  line-height: 0px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.landingpic {
+  overflow: hidden;
+  width: 90%;
+  margin-bottom: 15px;
+}
 
 // Place all the styles related to the Routinely controller here.
 // They will automatically be included in application.css.

@@ -17,7 +17,7 @@ class TasksController < ApplicationController
 		#raise @task.inspect
 		if @task.save
 			flash[:success] = "This task was added to your routine!"
-			redirect_to root_url
+			redirect_to "/home"
 		else
 			render 'static_pages/home'
 		end
@@ -35,7 +35,7 @@ class TasksController < ApplicationController
 		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
 		if @task.update_attributes(params[:task])
 			flash[:success] = "Task saved!"
-			redirect_to @user
+			redirect_to "/home"
 		else
 			render 'edit'
 		end
@@ -45,7 +45,7 @@ class TasksController < ApplicationController
 		@task = Task.find(params[:id])
 		@task.destroy
 		flash[:success] = "One less thing to worry about! :)"
-		redirect_to current_user
+		redirect_to "/home"
 	end
 
 	private
