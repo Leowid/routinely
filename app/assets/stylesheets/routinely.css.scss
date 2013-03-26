@@ -212,11 +212,12 @@ body > div.container {
 
 .btn-primary {
   background-image: -webkit-linear-gradient(top, rgb(148, 233, 136), rgb(90, 206, 90));
-  border-color: #bdecb6;
+  border-color: #5ace5a;
+  float: left;
 }
 
 .btn-primary:hover {
-  background-color: #bdecb6;
+  background-color: #5ace5a;
 }
 
 a {
@@ -297,6 +298,16 @@ body.homepage {
   overflow: hidden;
   width: 90%;
   margin-bottom: 15px;
+}
+
+.linktext {
+  padding-top: 10px;
+  margin-left: 130px;
+  color: white;
+}
+
+.linktext a {
+  color:white;
 }
 
 // Place all the styles related to the Routinely controller here.

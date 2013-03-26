@@ -10,10 +10,11 @@
       </section>
     </aside>
   </div>
-	 <div class="tasks">
+	 <div class="tasks">        
+    <h3> My daily routine </h3>
       <% if @user.tasks.any? %>
-        <h3> My daily routine </h3>
-          <%= render @tasks %>
+        <h4>Morning</h4>
+        <%= render @tasks %>
         <%= will_paginate @tasks %>
       <% end %>
   </div>
@@ -26,8 +27,10 @@
   		  Document and build up an amazing daily routine.
   		</h2>
 
-  		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-  	</div>
+  		<%= link_to "Sign up now", signup_path, class: "btn btn-large btn-primary" %> 
+  	</div> 
+    <div class="linktext"> or <a href="/signin">Sign in</a>
+    </div>
   	<div class="opening">
 		<h1>
 			“We are what we repeatedly do.

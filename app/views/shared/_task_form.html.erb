@@ -4,7 +4,7 @@
 		<%= f.time_select("hour") %> - <%= f.time_select("to_hour", include_blank: true) %>
 	</div>
 	<div class="textfield">		
-		<%= f.text_field :content, placeholder: "Add new item..." %>
+		<%= f.text_field :content, placeholder: "E.g. Wake up, Working out, etc." %>
 	</div>
 	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
 <% end %>

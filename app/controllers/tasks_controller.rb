@@ -6,8 +6,7 @@ class TasksController < ApplicationController
 
 	def show
 		@user = current_user
-		@tasks = @user.tasks.paginate(page: params[:page], order: 'hour')
-
+		@tasks = @user.tasks.paginate(page: params[:page], order: "time DESC")
 	end
 
 	def create
