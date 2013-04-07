@@ -9,7 +9,7 @@ class Task < ActiveRecord::Base
   validates :user_id, presence: true
   validates :hour, presence: true
 
-  default_scope order: 'tasks.created_at'
+  default_scope order: 'tasks.hour'
 
    protected
 

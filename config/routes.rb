@@ -2,6 +2,7 @@ Routinely::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :tasks
+  resources :fix
 
   root :to => "static_pages#home"
 

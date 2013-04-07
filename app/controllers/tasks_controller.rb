@@ -6,12 +6,14 @@ class TasksController < ApplicationController
 
 	def show
 		@user = current_user
-		@tasks = @user.tasks.paginate(page: params[:page], order: "time DESC")
+		@tasks = @user.tasks.paginate(page: params[:page])
 	end
 
 	def create
 		params[:task].except('to_hour(1i)', 'to_hour(2i)', 'to_hour(3i)', 'to_hour(4i)', 'to_hour(5i)') if params[:task]['to_hour(4i)'].blank?
 		@task = current_user.tasks.build(params[:task])
+		@task.to_hour = "1st January 2001 "+params[:task]['to_hour(4i)']+":"+params[:task]['to_hour(3i)']
+		@task.hour = "1st January 2001 "+params[:task]['hour(4i)']+":"+params[:task]['hour(3i)']  
 		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
 		#raise @task.inspect
 		if @task.save
