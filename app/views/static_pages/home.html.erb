@@ -1,43 +1,21 @@
-<% if signed_in? %>
-<div class="wrapper">
-  <div class="row profile">
-    <aside class="span4 offset0">
-      <section>
-				<%= render 'shared/user_info' %>
-			</section>
-			<section>
-				<%= render 'shared/task_form' %>
-      </section>
-    </aside>
-  </div>
-	 <div class="tasks">        
-    <h3> My daily routine </h3>
-      <% if @user.tasks.any? %>
-        <h4>Morning</h4>
-        <%= render @tasks %>
-        <%= will_paginate @tasks %>
-      <% end %>
-  </div>
-</div>
-<% else %>
 <div class="landing">
 	<div class="signing">
 		<h1>zenflow</h1>
 	 	<h2>
-  		  Document and build up an amazing daily routine.
+  		  Create an amazing daily routine.
   		</h2>
 
-  		<%= link_to "Sign up now", signup_path, class: "btn btn-large btn-primary" %> 
+  		<%= link_to "Sign up now", signup_path, class: "btn btn-large btn-primary" %> or <a href="/signin">Sign in</a>
   	</div> 
-    <div class="linktext"> or <a href="/signin">Sign in</a>
-    </div>
+
+
   	<div class="opening">
-		<h1>
-			“We are what we repeatedly do.
-		</h1>
-		<h2>
-	  		  Excellence, then, is not an act, but a habit.” - Aristotle
-	  	</h2>
+
+    <a href="/joel"><%= image_tag '/assets/joel.png', :class=>'examplepic' %></a>
+
+    <a href="/michelle"><%= image_tag '/assets/michelle.png', :class=>'examplepic' %></a>
+    
+    <a href="/carolyn"><%= image_tag '/assets/carolyn.png', :class=>'examplepic' %></a>
+
 	 </div>
 </div>
-<% end %>

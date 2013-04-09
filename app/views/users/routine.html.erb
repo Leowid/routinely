@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="row profile">
+    <aside class="span4 offset0">
+      <section>
+				<%= render 'shared/user_info' %>
+			</section>
+			<section>
+				<%= render 'shared/task_form' %>
+      </section>
+    </aside>
+  </div>
+	 <div class="tasks">        
+    <h3> My daily routine </h3>
+      <% if @user.tasks.any? %>
+        <h4>Morning</h4>
+        <%= render @tasks %>
+        <%= will_paginate @tasks %>
+      <% end %>
+  </div>
+</div>

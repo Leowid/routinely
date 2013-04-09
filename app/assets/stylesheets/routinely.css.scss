@@ -23,7 +23,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
 }
 
 p {
@@ -52,10 +51,11 @@ p {
 /* footer */
 
 footer {
-  margin-top: 400px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999;
+  bottom: 0px;
+  clear: both;
 }
 
 footer a {
@@ -213,7 +213,7 @@ body > div.container {
 .btn-primary {
   background-image: -webkit-linear-gradient(top, rgb(148, 233, 136), rgb(90, 206, 90));
   border-color: #5ace5a;
-  float: left;
+  margin:0 auto;
 }
 
 .btn-primary:hover {
@@ -240,6 +240,8 @@ a {
 h3 {
   line-height: 0px;
   padding-bottom: 25px;
+    text-align: center;
+
 }
 
 .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
@@ -249,18 +251,17 @@ h3 {
 body.homepage {
   background-image: url("zenflow.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
 }
 
 .landing {
   width: 1000px;
-  height: 400px;
+  height: 2000px;
   margin:0px auto;
 }
 
 .opening {
-  margin-left: 300px;
-  margin-top: 50px;
+  margin-left: 100px;
+  margin-top: 10px;
   color: white;
 }
 
@@ -285,13 +286,21 @@ body.homepage {
 
 
 .signing {
+  text-align: center;
+  color: #f7f7f7;
 }
 
 .signing h2 {
-  text-align: left;
+  text-align: center;
   line-height: 0px;
-  color: white;
   margin-bottom: 40px;
+  color: rgb(247, 247, 247);
+  text-align: center;
+}
+
+.signing h1 {
+  color: rgb(247, 247, 247);
+  text-align: center;
 }
 
 .landingpic {
@@ -300,14 +309,22 @@ body.homepage {
   margin-bottom: 15px;
 }
 
+.examplepic {
+  overflow: hidden;
+  width: 70%;
+  margin-bottom: 15px;
+  margin-top: 90px;
+  margin-left: 80px;
+}
+
 .linktext {
   padding-top: 10px;
   margin-left: 130px;
   color: white;
 }
 
-.linktext a {
-  color:white;
+.signing a {
+  color: #f7f7f7;
 }
 
 // Place all the styles related to the Routinely controller here.

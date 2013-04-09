@@ -6,6 +6,10 @@ Routinely::Application.routes.draw do
 
   root :to => "static_pages#home"
 
+  match '/routine', to: "users#routine"
+  match '/joel', to: "users#show", :id => "5"
+  match '/michelle', to: "users#show", :id => "10"
+  match '/carolyn', to: "users#show", :id => "11"
   match '/home',  to: "static_pages#home"
   match '/signup', to: "users#new"
   match '/signin', to: 'sessions#new'
