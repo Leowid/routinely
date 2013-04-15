@@ -2,8 +2,7 @@
 	<span class="time"><%= image_tag '/assets/clock.png', :class=>'pictures' %>  <%= Time.at(task.hour).strftime("%I:%M %p") %> 
 		<%= Time.at(task.to_hour).strftime("- %I:%M %p") unless task.to_hour.nil? %> </span><span class="content"><strong><%= task.content %> </strong></span>
 		<% if @current_user %>
-			(<a href="/tasks/<%= task.id %>/edit">edit</a>) (<%= link_to "delete", task, method: :delete,
-				data: { confirm: "Are you sure?" },
+			(<a href="/tasks/<%= task.id %>/edit">edit</a>) (<%= link_to "delete", task, method: :delete, :remote => true, :class =>'delete_task',
 				title: task.content %>)</span>
 		<% end %>
 	</div>

@@ -15,13 +15,18 @@ class TasksController < ApplicationController
 		@task.to_hour = "1st January 2001 "+params[:task]['to_hour(4i)']+":"+params[:task]['to_hour(5i)']
 		@task.hour = "1st January 2001 "+params[:task]['hour(4i)']+":"+params[:task]['hour(5i)']  
 		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
+		@user = current_user
+		@tasks = @user.tasks.paginate(page: params[:page])
+
+		respond_to do |format|
 		#raise @task.inspect
 		if @task.save
-			flash[:success] = "This task was added to your routine!"
-			redirect_to "/home"
+			format.html { redirect_to(@tasks, :notice => 'Post created.') }  
+        	format.js  
 		else
 			render 'static_pages/home'
 		end
+	end
 	end
 
 	def edit
@@ -45,8 +50,11 @@ class TasksController < ApplicationController
 	def destroy
 		@task = Task.find(params[:id])
 		@task.destroy
-		flash[:success] = "One less thing to worry about! :)"
-		redirect_to "/home"
+
+		respond_to do |format|
+			format.html { redirect_to '/routine'}
+			format.js   { render :nothing => true}
+		end
 	end
 
 	private

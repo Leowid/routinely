@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(function(){
+	$('.delete_task').bind('ajax:success', function() {
+		$(this).closest('div.taskdesign').fadeOut();
+	});
+});
+

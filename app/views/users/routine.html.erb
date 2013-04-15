@@ -13,7 +13,9 @@
     <h3> My daily routine </h3>
       <% if @user.tasks.any? %>
         <h4>Morning</h4>
+        <div class="taskscontainer">
         <%= render @tasks %>
+        </div>
         <%= will_paginate @tasks %>
       <% end %>
   </div>
