@@ -24,6 +24,7 @@ group :assets do
 group :production do
   gem 'pg', '0.12.2'
   gem 'google-analytics-rails'
+  gem 'mixpanel'
 
 end
 

@@ -23,6 +23,7 @@ class TasksController < ApplicationController
 		if @task.save
 			format.html { redirect_to(@tasks, :notice => 'Post created.') }  
         	format.js  
+        	mixpanel.track 'New task', {mp_note: 'task added'})
 		else
 			render 'static_pages/home'
 		end
