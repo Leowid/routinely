@@ -2,3 +2,4 @@ $('div.taskscontainer').html('').append("<%= escape_javascript render(@tasks) %>
 	$('.delete_task').bind('ajax:success', function() {
 		$(this).closest('div.taskdesign').fadeOut();
 	});
+mixpanel.track('task added');

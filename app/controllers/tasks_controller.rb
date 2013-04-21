@@ -23,7 +23,6 @@ class TasksController < ApplicationController
 		if @task.save
 			format.html { redirect_to(@tasks, :notice => 'Post created.') }  
         	format.js  
-        	mixpanel.track 'New task', {mp_note: 'task added'})
 		else
 			render 'static_pages/home'
 		end
@@ -42,7 +41,7 @@ class TasksController < ApplicationController
 		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
 		if @task.update_attributes(params[:task])
 			flash[:success] = "Task saved!"
-			redirect_to "/home"
+			redirect_to "/routine"
 		else
 			render 'edit'
 		end

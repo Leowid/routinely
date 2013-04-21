@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(params[:user])
-		mixpanel.track 'User Created',
 		if @user.save
 			sign_in @user
 			flash[:success] = "Welcome to Routinely!"
