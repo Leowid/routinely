@@ -1,5 +1,7 @@
 $('div.taskscontainer').html('').append("<%= escape_javascript render(@tasks) %>"); 
 	$('.delete_task').bind('ajax:success', function() {
 		$(this).closest('div.taskdesign').fadeOut();
+  		$('.textfield input').val('');
 	});
 mixpanel.track('task added');
+
