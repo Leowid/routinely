@@ -1,5 +1,2 @@
-$(document).ready( ->
-$('.delete_task').live('ajax:success', ->
-$(this).closest('tr').fadeOut();
-);
-);
+jQuery -> 
+ $('.best_in_place').best_in_place()

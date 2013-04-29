@@ -3,3 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 //= require bootstrap
+
+jQuery -> 
+ $('.best_in_place').best_in_place()

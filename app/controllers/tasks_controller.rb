@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-	before_filter :signed_in_user, only: [:create, :destroy]
+		respond_to :html, :json
+		before_filter :signed_in_user, only: [:create, :destroy, :update]
 
 	def index
 	end
@@ -39,12 +40,8 @@ class TasksController < ApplicationController
 		@user = current_user
 		@task = Task.find(params[:id])
 		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
-		if @task.update_attributes(params[:task])
-			flash[:success] = "Task saved!"
-			redirect_to "/routine"
-		else
-			render 'edit'
-		end
+		@task.update_attributes(params[:task])
+		respond_with @task
 	end
 
 	def destroy

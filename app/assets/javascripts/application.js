@@ -12,12 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.purr
+//= require best_in_place
 //= require bootstrap
 //= require_tree .
-
-$(function(){
-	$('.delete_task').bind('ajax:success', function() {
-		$(this).closest('div.taskdesign').fadeOut();
-	});
-});
 
