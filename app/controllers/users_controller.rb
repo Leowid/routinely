@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 		@user = User.new(params[:user])
 		if @user.save
 			sign_in @user
+			UserMailer.signup_email(@user).deliver
 			flash[:success] = "Welcome to Routinely!"
 			redirect_to "/home"
 		else

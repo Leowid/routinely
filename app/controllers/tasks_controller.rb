@@ -42,7 +42,10 @@ class TasksController < ApplicationController
 		@task = Task.find(params[:id])
 		@task.to_hour = nil if params[:task]['to_hour(4i)'].blank?
 		@task.update_attributes(params[:task])
-		respond_with @task
+		if @task
+			redirect_to '/routine'
+		else respond_with @task
+		end
 	end
 
 	def destroy

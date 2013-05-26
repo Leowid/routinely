@@ -11,39 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210225905) do
+ActiveRecord::Schema.define(:version => 20130210224620) do
 
   create_table "routines", :force => true do |t|
-    t.string   "email"
-    t.string   "item"
-    t.string   "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "email"
+    t.string    "item"
+    t.string    "date"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "tasks", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.time     "hour",       :limit => 255
-    t.time     "to_hour",    :limit => 255
+    t.string    "content"
+    t.integer   "user_id"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+    t.time      "hour"
+    t.time      "to_hour"
+    t.time      "minute"
+    t.time      "to_minute"
+    t.text      "string"
   end
 
-  add_index "tasks", ["hour"], :name => "index_tasks_on_hour"
-  add_index "tasks", ["to_hour"], :name => "index_tasks_on_to_hour"
   add_index "tasks", ["user_id", "created_at"], :name => "index_tasks_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "password_digest"
-    t.string   "remember_token"
-    t.string   "bio"
-    t.text     "routine"
-    t.string   "twitter"
+    t.string    "name"
+    t.string    "email"
+    t.timestamp "created_at",      :null => false
+    t.timestamp "updated_at",      :null => false
+    t.string    "password_digest"
+    t.string    "remember_token"
+    t.string    "bio"
+    t.text      "routine"
+    t.string    "twitter"
   end
 
   add_index "users", ["bio"], :name => "index_users_on_bio"
